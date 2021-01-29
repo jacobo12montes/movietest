@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>API KEYS</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>API KEY</th>
+      <th>USER ID</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apikey.each do |key| %>
+      <tr>
+        <td><%= key.access_token %></td>
+        <td><%= key.user_id%></td>
+        <td><%= link_to 'Destroy', key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -10,6 +10,5 @@ Rails.application.routes.draw do
       resources :movies
     end
   end
-  
   resources :api_keys, only: [:index, :create, :destroy]
 end
