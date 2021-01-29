@@ -15,6 +15,7 @@
   <button><%= link_to "Back", movies_path %></button>
 
     <% if current_user %>
+      <button><%= link_to "Favorite Movies", favmovies_path %></button>
       <button><%= link_to " Logout", destroy_user_session_path, :method => :delete , class: "destroy_user_session" %></button>
     <%else%>
       <button><%= link_to "Sign up", new_user_registration_path,  class: "new__user_registration" %></button>
