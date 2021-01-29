@@ -35,3 +35,9 @@
 <br>
 
 <%= link_to 'New Movie', new_movie_path %>
+
+<%= form_with url: "/movies", method: :get do |form| %>
+  <%= form.label :search, "Search for:" %>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag("Search") %>
+<% end %>
