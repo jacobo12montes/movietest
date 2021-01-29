@@ -2,12 +2,14 @@ require 'rails_helper'
 
 RSpec.describe 'movies/edit', type: :view do
   before(:each) do
+    @current_user = User.find(1)
     @movie = assign(:movie, Movie.create!(
                               title: 'MyString',
                               description: 'MyText',
                               movie_length: 'MyString',
                               director: 'MyString',
-                              rating: 'MyString'
+                              rating: 'MyString',
+                              user_id: @current_user.id
                             ))
   end
 

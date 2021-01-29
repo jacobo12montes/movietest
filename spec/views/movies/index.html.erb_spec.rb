@@ -2,20 +2,23 @@ require 'rails_helper'
 
 RSpec.describe 'movies/index', type: :view do
   before(:each) do
+    @current_user = User.find(1)
     assign(:movies, [
              Movie.create!(
                title: 'Title',
                description: 'MyText',
                movie_length: 'Movie Length',
                director: 'Director',
-               rating: 'Rating'
+               rating: 'Rating',
+               user_id: @current_user.id
              ),
              Movie.create!(
                title: 'Title',
                description: 'MyText',
                movie_length: 'Movie Length',
                director: 'Director',
-               rating: 'Rating'
+               rating: 'Rating',
+               user_id: @current_user.id
              )
            ])
   end

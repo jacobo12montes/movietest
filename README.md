@@ -63,6 +63,20 @@ bundle install rspec
 gem install rspec
 
 ```
+*To run test, run in your terminal:
+
+```
+rspec
+
+```
+
+*To start your server, run in your terminal:
+
+```
+rails s
+
+```
+
 
 *In the browser navigate to `http://localhost:3000`
 

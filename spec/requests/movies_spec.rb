@@ -15,12 +15,27 @@ require 'rails_helper'
 RSpec.describe '/movies', type: :request do
   # Movie. As you add validations to Movie, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
+  #  User.create!(email: 'example@email.com', 
+  #   password: 'qwertyuiop', 
+  #   password_confirmation: 'qwertyuiop')
+  
+    let(:valid_attributes) do
+      @current_user = User.find(1)
+    skip(title: 'Some title',
+      description: 'MyText',
+      movie_length: 'Movie Length',
+      director: 'Director',
+      rating: 'Rating',
+      user_id: @current_user.id)
   end
 
   let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
+    skip(title: '',
+      description: 'MyText',
+      movie_length: 'Movie Length',
+      director: 'Director',
+      rating: 'Rating',
+      user: '')
   end
 
   describe 'GET /index' do
@@ -35,13 +50,6 @@ RSpec.describe '/movies', type: :request do
     it 'renders a successful response' do
       movie = Movie.create! valid_attributes
       get movie_url(movie)
-      expect(response).to be_successful
-    end
-  end
-
-  describe 'GET /new' do
-    it 'renders a successful response' do
-      get new_movie_url
       expect(response).to be_successful
     end
   end

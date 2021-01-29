@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  validates :title, presence: true
   self.inheritance_column = 'not_sti'
   belongs_to :user
   has_many :favmovies
