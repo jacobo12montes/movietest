@@ -11,6 +11,19 @@
   </head>
 
   <body>
+    <header>
+  <button><%= link_to "Back", movies_path %></button>
+
+    <% if current_user %>
+      <button><%= link_to " Logout", destroy_user_session_path, :method => :delete , class: "destroy_user_session" %></button>
+    <%else%>
+      <button><%= link_to "Sign up", new_user_registration_path,  class: "new__user_registration" %></button>
+      <button><%= link_to "Login", new_user_session_path,  class: "new_user_session" %></button>
+  <% end %> 
+  </header>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
