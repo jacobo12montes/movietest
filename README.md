@@ -57,6 +57,60 @@ bundle install rspec
 
 ```
 
+*Run the  yarn install and upgrade commmands
+
+```
+yarn install
+
+yarn upgrade
+
+```
+
+*Run the migrations
+
+```
+rails db:migrate
+
+```
+
+
+*Start your server, run in your terminal:
+
+```
+rails s
+
+```
+
+
+*In the browser navigate to `http://localhost:3000`
+ there you can create an user and log-in
+ that way you can create an API_KEY to get access to the api version, enjoy it.
+
+
+////////////////
+////////////////
+////////////////
+////////////////
+
+If you have issues runing the app try Install webpacker:
+```
+bundle exec rails webpacker:install 
+
+```
+And then run for the dev config:
+
+```
+./bin/webpack-dev-server
+
+```
+
+
+////////////////
+////////////////
+////////////////
+////////////////
+
+
 *To install RSpec open terminal and enter the following
 
 ```
@@ -69,16 +123,6 @@ gem install rspec
 rspec
 
 ```
-
-*To start your server, run in your terminal:
-
-```
-rails s
-
-```
-
-
-*In the browser navigate to `http://localhost:3000`
 
 ## :busts_in_silhouette: Author
 
